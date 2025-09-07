@@ -16,6 +16,7 @@ import { WhatIDoCard } from "@/components/what-i-do-card";
 import { ProjectsSection } from "@/components/project-section";
 import { WhatIDoSection } from "@/components/whatIDo-section";
 import { TechStackIcons } from "@/components/tech-stack-icons";
+import { ContactInfoCard } from "@/components/ContactInfoCard";
 
 export default function Portfolio() {
   return (
@@ -274,37 +275,7 @@ export default function Portfolio() {
           <div className="flex justify-center items-center mt-16">
             <GlassmorphicCard>
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
-                    <Mail className="h-5 w-5 text-purple-400" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-zinc-500">Email</div>
-                    <div className="font-medium">utsavpoddar002@gmail.com</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
-                    <Linkedin className="h-5 w-5 text-purple-400" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-zinc-500">LinkedIn</div>
-                    <div className="font-medium">
-                      linkedin.com/in/itsutsavpoddar
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
-                    <Github className="h-5 w-5 text-purple-400" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-zinc-500">GitHub</div>
-                    <div className="font-medium">github.com/itsutsavpoddar</div>
-                  </div>
-                </div>
-              </div>
+              <ContactInfoCard />
 
               <div className="mt-8 pt-8 border-t border-zinc-800">
                 <h4 className="text-lg font-medium mb-4">Current Status</h4>
