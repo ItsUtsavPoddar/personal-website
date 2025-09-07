@@ -1,3 +1,6 @@
+"use client";
+import { useState, useRef, useEffect } from "react";
+
 const techIcons = [
   { name: "C", url: "/logo/c.svg" },
   { name: "Python", url: "/logo/python.svg" },
@@ -43,18 +46,54 @@ const techIcons = [
   { name: "NumPy", url: "/logo/numpy.svg" },
 ];
 
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(pointer: coarse)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+  return isMobile;
+}
+
 export function TechStackIcons() {
+  const [activeIdx, setActiveIdx] = useState<number | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isMobile = useIsMobile();
+
+  // Show tooltip for 2 seconds on tap/click
+  const handleClick = (idx: number) => {
+    if (!isMobile) return;
+    setActiveIdx(idx);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setActiveIdx(null), 1000);
+  };
   return (
     <div className="flex flex-wrap justify-center gap-6 mt-16">
       {techIcons.map((icon, idx) => (
-        <img
+        <div
           key={idx}
-          src={icon.url}
-          alt={icon.name}
-          title={icon.tooltip || icon.name}
-          className="h-10 w-10 object-contain opacity-80 hover:opacity-100 transition-opacity cursor-pointer"
-          loading="lazy"
-        />
+          className="flex flex-col items-center relative"
+          onClick={() => handleClick(idx)}
+        >
+          <img
+            src={icon.url}
+            alt={icon.name}
+            title={icon.tooltip || icon.name}
+            className="h-10 w-10 object-contain opacity-80 hover:opacity-100 transition-opacity cursor-pointer"
+            loading="lazy"
+          />
+          {activeIdx === idx && (
+            <span
+              className="absolute top-12 z-10 text-xs text-white font-medium bg-neutral-900/50 rounded px-3 py-2 shadow-lg transition-all duration-200"
+              style={{ whiteSpace: "nowrap" }}
+            >
+              {icon.tooltip || icon.name}
+            </span>
+          )}
+        </div>
       ))}
     </div>
   );
