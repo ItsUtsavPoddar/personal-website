@@ -15,31 +15,35 @@ const projects = [
     image: "/placeholder.svg?height=400&width=600",
     demoUrl: "https://satellite.utsv.tech",
     repoUrl: "https://github.com/ItsUtsavPoddar/satellite-frontend",
-    blogUrl:
-      "https://utsavpoddar.hashnode.dev/real-time-satellite-tracker-using-reactjs-and-spring-boot",
+    repoButtonText: "Case Study + Source Code",
+    // blogUrl:
+    //   "https://utsavpoddar.hashnode.dev/real-time-satellite-tracker-using-reactjs-and-spring-boot",
   },
   {
     title: "Parkinson's Disease Diagnosis Research Paper",
     description:
       "A comprehensive study on the early diagnosis of Parkinson's Disease using machine learning and Deep Learning techniques. Numerical and Graphical Feature Based Speech Analysis using Italian and MDVR-KCL datasets.",
-    tags: ["Python", "Machine Learning", "Research"],
+    tags: ["Python", "Machine Learning", "Research", "Deep Learning"],
     video: "/research_parkisons.mp4",
     image: "/placeholder.svg?height=400&width=600",
-    demoUrl: "https://parkinsons.utsv.tech",
-    repoUrl: "https://github.com/ItsUtsavPoddar/parkinsons-disease-diagnosis",
-    blogUrl:
-      "https://utsavpoddar.hashnode.dev/parkinsons-disease-diagnosis-research-paper",
+    // demoUrl: "https://parkinsons.utsv.tech",
+    repoUrl:
+      "https://github.com/ItsUtsavPoddar/parkinsons-diagnosis-ai-research",
+    repoButtonText: "Case Study + Source Code",
+    // blogUrl:
+    //   "https://utsavpoddar.hashnode.dev/parkinsons-disease-diagnosis-research-paper",
   },
   {
     title: "quickDrop",
     description:
       "A chat app with authentication, anonymous chat, and real-time messaging. Features room creation, message persistence, and a modern UI.",
-    tags: ["React", "Socket.IO", "Node.js", "Tailwind CSS", "Shadcn"],
+    tags: ["React", "Socket.IO", "Node.js", "SQL", "Tailwind CSS", "Shadcn"],
     video: "/chatApp.mp4",
     image: "/placeholder.svg?height=400&width=600",
-    demoUrl: "https://quickdrop.utsv.tech",
-    repoUrl: "https://github.com/ItsUtsavPoddar/quickdrop",
-    blogUrl: "https://utsavpoddar.hashnode.dev/quickdrop-chat-app",
+    demoUrl: "https://chat.utsv.tech",
+    repoUrl: "https://github.com/ItsUtsavPoddar/quickDrop-frontend",
+    repoButtonText: "Case Study + Source Code",
+    // blogUrl: "https://utsavpoddar.hashnode.dev/quickdrop-chat-app",
   },
   {
     title: "Paathshala - Institute Portal and Management System",
@@ -48,8 +52,12 @@ const projects = [
     tags: ["Fast API", "Python", "NextJS", "MongoDB"],
     video: "/paathshala.mp4",
     image: "/placeholder.svg?height=400&width=600",
-    demoUrl: "https://paathshala.utsv.tech",
-    repoUrl: "https://github.com/ItsUtsavPoddar/paathshala",
+    demoUrl: "https://paathshalainstitute.in/",
+    demoUrl2: "https://portal.paathshalainstitute.in/",
+    demoUrlText: "Main Website",
+    demoUrl2Text: "Portal & Management System",
+
+    // repoUrl: "https://github.com/ItsUtsavPoddar/paathshala",
   },
 ];
 
@@ -84,8 +92,9 @@ export function ProjectsSection() {
       </div>
       <div className="container relative z-10">
         <SectionHeading
-          title="Featured Projects"
-          subtitle="Flagship projects that showcase my skills and expertise."
+          title="Flagship Projects"
+          subtitle="Showcase of my skills and expertise"
+          subsubtitle="A selection of my most notable works"
         />
 
         {/* Only Autoplay Toggle */}

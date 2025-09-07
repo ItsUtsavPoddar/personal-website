@@ -14,81 +14,49 @@ const whatIDo = [
       "Astrophotography tips",
     ],
     video: "/astronomy.mp4",
-    links: [
-      { label: "Website coming soon", url: "https://utsv.tech/astronomy" },
-    ],
+    links: [{ label: "Website coming soon", url: "https://utsv.tech/" }],
     image: "/icons/astronomy.png",
     content: [
       {
         type: "blog",
         label: "Tracking the ISS (Coming Soon)",
-        url: "/blog/iss-tracking",
+        url: "/",
       },
     ],
   },
   // Gardening
   {
     title: "Gardening",
-    description: "Cultivating plants, flowers, and a love for nature.",
-    highlights: [
-      "Indoor gardening tips",
-      "Seasonal planting guides",
-      "Sustainable practices",
-    ],
+    description: "The longer you spend in tech, the stronger the urge to dig.",
+    highlights: ["Gardening Journals", "Species' Records"],
     video: "/gardening.mp4",
-    links: [
-      { label: "Blog", url: "https://yourblog.com/gardening" },
-      { label: "Instagram", url: "https://instagram.com/yourgarden" },
-    ],
+    links: [{ label: "Website coming soon", url: "https://utsv.tech/" }],
     image: "/icons/gardening.png",
     content: [
       {
-        type: "blog",
-        label: "Top 10 Houseplants",
-        url: "/blog/houseplants",
-      },
-      {
         type: "article",
-        label: "Companion Planting",
-        url: "/articles/companion-planting",
-      },
-      {
-        type: "link",
-        label: "Garden Design Ideas",
-        url: "https://yourgarden.com/design-ideas",
+        label: "My Garden Species (Coming Soon)",
+        url: "/",
       },
     ],
   },
   // Blogging
   {
     title: "Blogging & Streaming",
-    description: "Sharing insights, tips, and stories from my journey.",
-    highlights: [
-      "Writing tutorials",
-      "Content creation tips",
-      "Building an audience",
-    ],
+    description:
+      "Sharing insights, and stories from my journey. Streaming on Twitch.",
+    highlights: ["Journaling my tech journey", "Building an audience"],
     video: "/blogStream.mp4",
     links: [
-      { label: "Blog", url: "https://yourblog.com" },
+      { label: "Blogs' Website Coming Soon", url: "/  " },
       { label: "Twitch", url: "https://twitch.com/itsutsav" },
     ],
     image: "/icons/blogging.png",
     content: [
       {
         type: "blog",
-        label: "How to Start a Blog",
-        url: "/blog/start-a-blog",
-      },
-      {
-        type: "article",
-        label: "10 Tips for Writing Engaging Content",
-        url: "/articles/writing-tips",
-      },
-      {
-        type: "link",
-        label: "Content Creation Resources",
-        url: "https://yourblog.com/resources",
+        label: "Satellite Tracker Build Story (Coming Soon)",
+        url: "/",
       },
     ],
   },

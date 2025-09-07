@@ -14,9 +14,13 @@ interface ProjectCardProps {
   tags: string[];
   image?: string;
   video?: string;
-  demoUrl: string;
-  repoUrl: string;
+  demoUrl?: string;
+  repoUrl?: string;
+  repoButtonText?: string;
   blogUrl?: string;
+  demoUrl2?: string;
+  demoUrlText?: string;
+  demoUrl2Text?: string;
   autoplayMode?: "all" | "hover";
   videoRef?: (el: HTMLVideoElement | null) => void;
   isHovered?: boolean;
@@ -30,6 +34,10 @@ export function ProjectCard({
   video,
   demoUrl,
   repoUrl,
+  repoButtonText,
+  demoUrl2,
+  demoUrlText,
+  demoUrl2Text,
   blogUrl,
   autoplayMode = "all",
   videoRef,
@@ -112,22 +120,28 @@ export function ProjectCard({
               ))}
             </div>
 
-            <div className="flex justify-between mt-auto pt-4 border-t border-zinc-700/50">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-zinc-200 hover:text-white hover:bg-zinc-700/50"
-                asChild
-              >
-                <Link href={repoUrl} target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-4 w-4" />
-                  Code
-                </Link>
-              </Button>
+            <div className="flex flex-wrap gap-2 justify-between mt-auto pt-4 border-t border-zinc-700/50">
+              {repoUrl && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-zinc-200 bg-neutral-700 hover:text-white hover:bg-zinc-700/50"
+                  asChild
+                >
+                  <Link
+                    href={repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="mr-2 h-4 w-4" />
+                    {repoButtonText || "Source Code"}
+                  </Link>
+                </Button>
+              )}
               {blogUrl && (
                 <Button
                   size="sm"
-                  className="text-zinc-200 bg-gradient-to-r from-purple-500/10 to-blue-500/10  hover:from-blue-500/10 hover:to-purple-500/10 border-0"
+                  className="text-zinc-200 bg-gradient-to-r from-purple-500/20 to-neutral-700 hover:from-blue-500/10 hover:to-purple-500/10 border-0"
                   asChild
                 >
                   <Link
@@ -139,16 +153,38 @@ export function ProjectCard({
                   </Link>
                 </Button>
               )}
-              <Button
-                size="sm"
-                className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-pink-500 hover:to-purple-500 border-0"
-                asChild
-              >
-                <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
-                  Live Demo
-                  <ArrowUpRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              {demoUrl && (
+                <Button
+                  size="sm"
+                  className="bg-gradient-to-r from-teal-700 to-cyan-700 hover:from-pink-500 hover:to-purple-500 border-0"
+                  asChild
+                >
+                  <Link
+                    href={demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {demoUrlText || "Live Demo"}
+                    <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              )}
+              {demoUrl2 && (
+                <Button
+                  size="sm"
+                  className="bg-gradient-to-r from-teal-700 to-cyan-700 hover:from-pink-500 hover:to-purple-500 border-0"
+                  asChild
+                >
+                  <Link
+                    href={demoUrl2}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {demoUrl2Text || "Live Demo"}
+                    <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              )}
             </div>
           </div>
 
