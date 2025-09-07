@@ -9,7 +9,7 @@ const experiences = [
     company: "NielsenIQ",
     period: "Mar 2025 - Present (Started as SWE Intern in Summer 2025)",
     description: [
-      "Part of a central 5-member COP team building and maintaining frameworks used by 200+ dev teams across NielsenIQ.",
+      "Part of a central COP team building and maintaining frameworks used by 200+ dev teams across NielsenIQ.",
       "Contributed to the core Java automation framework, now expanding ownership to TypeScript and Python frameworks for UI and API testing.",
       "Focus on creating scalable, reusable tools that integrate with CI / CD pipelines, Grafana dashboards, and Zephyr reporting.",
     ],
@@ -18,7 +18,7 @@ const experiences = [
   {
     title: "Founder & Lead Developer",
     company: "EdTech Platform (Self-initiated Startup)",
-    period: "2024 – Present",
+    period: "2024 - Present",
     description: [
       "Designed and developed a full-stack SaaS platform tailored for coaching institutes and educators.",
       "Led product architecture, built scalable frontend and backend systems, and iterated features based on real user needs.",
