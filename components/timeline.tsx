@@ -5,11 +5,14 @@ import { useMobile } from "@/hooks/use-mobile";
 
 const experiences = [
   {
-    title: "Associate Software Engineer",
+    title: "Associate Software Engineer - Quality COP Team",
     company: "NielsenIQ",
-    period: "Mar 2025 - Present",
-    description:
-      "Developed responsive web applications using React and TypeScript. Collaborated with designers and backend engineers to deliver high-quality products.",
+    period: "Mar 2025 - Present (Started as SWE Intern in Summer 2025)",
+    description: [
+      "Part of a central 5-member COP team building and maintaining frameworks used by 200+ dev teams across NielsenIQ.",
+      "Contributed to the core Java automation framework, now expanding ownership to TypeScript and Python frameworks for UI and API testing.",
+      "Focus on creating scalable, reusable tools that integrate with CI / CD pipelines, Grafana dashboards, and Zephyr reporting.",
+    ],
     level: 1,
   },
   {
@@ -20,13 +23,7 @@ const experiences = [
       "Lead the frontend development team in building a SaaS platform. Implemented new features, improved performance, and mentored junior developers.",
     level: 1,
   },
-  {
-    title: "Intern",
-    company: "NielsenIQ",
-    period: "2025 (Summer)",
-    description:
-      "Assisted in developing web applications and learned modern web development practices.",
-  },
+
   {
     title: "Freelance Software Developer",
     company: "Pinak Enterprises",
@@ -71,7 +68,15 @@ export function Timeline() {
                 <div className="text-zinc-400 mb-4">
                   {experience.company} | {experience.period}
                 </div>
-                <p className="text-zinc-300">{experience.description}</p>
+                {Array.isArray(experience.description) ? (
+                  <ul className="list-disc list-inside text-zinc-300 space-y-2">
+                    {experience.description.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-zinc-300">{experience.description}</p>
+                )}
               </div>
             </div>
           </motion.div>
