@@ -17,10 +17,13 @@ const experiences = [
   },
   {
     title: "Founder & Lead Developer",
-    company: "Service Agency",
-    period: "2025 - Present",
-    description:
-      "Lead the frontend development team in building a SaaS platform. Implemented new features, improved performance, and mentored junior developers.",
+    company: "EdTech Platform (Self-initiated Startup)",
+    period: "2024 – Present",
+    description: [
+      "Designed and developed a full-stack SaaS platform tailored for coaching institutes and educators.",
+      "Led product architecture, built scalable frontend and backend systems, and iterated features based on real user needs.",
+      "Currently expanding the platform into a generalised service to be deployed across institutions.",
+    ],
     level: 1,
   },
 
