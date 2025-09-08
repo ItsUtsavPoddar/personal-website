@@ -1,8 +1,19 @@
 "use client";
 import Link from "next/link";
-import { Mail, Linkedin, Github, Copy } from "lucide-react";
+import { Mail, Linkedin, Github, Copy, Check } from "lucide-react";
+import { useState } from "react";
 
 export function ContactInfoCard() {
+  // State for copied feedback
+  const [copied, setCopied] = useState<{ [key: string]: boolean }>({});
+
+  // Handler for copy action
+  const handleCopy = (key: string, value: string) => {
+    navigator.clipboard.writeText(value);
+    setCopied((prev) => ({ ...prev, [key]: true }));
+    setTimeout(() => setCopied((prev) => ({ ...prev, [key]: false })), 1200);
+  };
+
   return (
     <div className="space-y-6">
       {/* Email */}
@@ -24,13 +35,15 @@ export function ContactInfoCard() {
           </div>
         </Link>
         <button
-          className="ml-2 p-2 rounded hover:bg-zinc-800 transition"
-          onClick={() =>
-            navigator.clipboard.writeText("utsavpoddar002@gmail.com")
-          }
+          className="ml-2 p-2 rounded hover:bg-zinc-800 transition relative"
+          onClick={() => handleCopy("email", "utsavpoddar002@gmail.com")}
           title="Copy Email"
         >
-          <Copy className="h-4 w-4 text-zinc-400" />
+          {copied.email ? (
+            <Check className="h-4 w-4 text-green-400" />
+          ) : (
+            <Copy className="h-4 w-4 text-zinc-400" />
+          )}
         </button>
       </div>
       {/* LinkedIn */}
@@ -52,13 +65,17 @@ export function ContactInfoCard() {
           </div>
         </Link>
         <button
-          className="ml-2 p-2 rounded hover:bg-zinc-800 transition"
+          className="ml-2 p-2 rounded hover:bg-zinc-800 transition relative"
           onClick={() =>
-            navigator.clipboard.writeText("linkedin.com/in/itsutsavpoddar")
+            handleCopy("linkedin", "linkedin.com/in/itsutsavpoddar")
           }
           title="Copy LinkedIn"
         >
-          <Copy className="h-4 w-4 text-zinc-400" />
+          {copied.linkedin ? (
+            <Check className="h-4 w-4 text-green-400" />
+          ) : (
+            <Copy className="h-4 w-4 text-zinc-400" />
+          )}
         </button>
       </div>
       {/* GitHub */}
@@ -80,13 +97,15 @@ export function ContactInfoCard() {
           </div>
         </Link>
         <button
-          className="ml-2 p-2 rounded hover:bg-zinc-800 transition"
-          onClick={() =>
-            navigator.clipboard.writeText("github.com/itsutsavpoddar")
-          }
+          className="ml-2 p-2 rounded hover:bg-zinc-800 transition relative"
+          onClick={() => handleCopy("github", "github.com/itsutsavpoddar")}
           title="Copy GitHub"
         >
-          <Copy className="h-4 w-4 text-zinc-400" />
+          {copied.github ? (
+            <Check className="h-4 w-4 text-green-400" />
+          ) : (
+            <Copy className="h-4 w-4 text-zinc-400" />
+          )}
         </button>
       </div>
     </div>
