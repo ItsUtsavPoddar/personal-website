@@ -48,7 +48,7 @@ export default function Portfolio() {
               <div className="inline-block">
                 <div className="relative px-8 py-2 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
                   <span className="relative z-10">
-                    Software Engineer & Gardener
+                    Software Engineer <br /> & Botanist.. Like the Martian? :P
                   </span>
                   <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-gray-500/20 animate-pulse"></span>
                 </div>
